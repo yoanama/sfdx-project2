@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Plants That Need Watering" icon-name="custom:custom5">
+        <div class="slds-m-around_medium">
+            <template if:true={plants.length}>
+                <lightning-datatable key-field="id" data={plants} columns={columns} hide-checkbox-column=true>
+                </lightning-datatable>
+            </template>
+            <template if:false={plants.length}>
+                No plants are thirsty!
+            </template>
+            <template if:true={error}>
+                Error!
+            </template>
+        </div>
+    </lightning-card>
+</template>
